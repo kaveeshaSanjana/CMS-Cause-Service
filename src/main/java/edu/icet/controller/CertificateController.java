@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/certificate")
 @CrossOrigin
@@ -23,6 +25,14 @@ public class CertificateController {
     public ResponseEntity<CertificateDTO> getById(Authentication authentication,@PathVariable("id")Long id){
         return ResponseEntity.ok().body(certificateService.getById(authentication,id));
     }
+    @PostMapping
+    public ResponseEntity<CertificateDTO> create(Authentication authentication, @RequestBody CertificateDTO certificateDTO) {
+        return ResponseEntity.ok().body(certificateService.create(authentication, certificateDTO));
+    }
 
+    @GetMapping
+    public ResponseEntity<List<CertificateDTO>> getAll(Authentication authentication) {
+        return ResponseEntity.ok().body(certificateService.getAll(authentication));
+    }
 
 }
