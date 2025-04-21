@@ -16,7 +16,6 @@ public class CertificateEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long certificateId;
-
     private LocalDate generatedDate;
     private Long enrollId;
     private String certificateUrl;
