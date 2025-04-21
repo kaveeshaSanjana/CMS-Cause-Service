@@ -2,8 +2,6 @@ package edu.icet.controller;
 
 import edu.icet.dto.CauseDTO;
 import edu.icet.service.CauseService;
-import jakarta.annotation.security.RolesAllowed;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
